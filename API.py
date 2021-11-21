@@ -4,15 +4,14 @@ from flask import Flask, request, Response
 from Rossmann import Rossmann
 
 # loading model
-model = pickle.load (open ('parametros/xgb_tuned.pkl', 'rb'))
-
+model = pickle.load(open( 'C:/Users/Legof/Desktop/DS em produção/Módelo em produção/parametros/xgb_tuned.pkl', 'rb') )
 # initialize API
-app = Flask (__name__)
+app = Flask(__name__)
 
 
-@app.route ('/rossmann/predict', methods=[ 'POST' ])
+@app.route ('/rossmann/predict', methods=['POST' ])
 def rossmann_predict():
-    test_json = request.get_json ()
+    test_json = request.get_json()
 
     if test_json:  # there is data
         if isinstance (test_json, dict):  # unique example
@@ -38,10 +37,9 @@ def rossmann_predict():
 
         return df_response
 
-
     else:
         return Response('{}', status=200, mimetype='application/json')
 
 
 if __name__ == '__main__':
-    app.run ('0.0.0.0')
+    app.run('0.0.0.0')

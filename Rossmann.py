@@ -9,15 +9,12 @@ import os
 
 class Rossmann (object):
     def __init__(self):
-        self.home_path = ''
-        self.competition_distance_scaler = pickle.load (
-            open (self.home_path + 'parametros/competition_distance_scaler.pkl', 'rb'))
-        self.competition_time_month_scaler = pickle.load (
-            open (self.home_path + 'parametros/competition_time_month_scaler.pkl', 'rb'))
-        self.promo_time_week_scaler = pickle.load (
-            open (self.home_path + 'parametros/promo_time_week_scaler.pkl', 'rb'))
-        self.year_scaler = pickle.load (open (self.home_path + 'parametros/year_scaler.pkl', 'rb'))
-        self.store_type_scaler = pickle.load (open (self.home_path + 'parametros/store_type_scaler.pkl', 'rb'))
+        self.home_path='C:/Users/Legof/Desktop/DS em produção/Módelo em produção/'
+        self.competition_distance_scaler   = pickle.load( open( self.home_path + 'parametros/competition_distance_scaler.pkl', 'rb') )
+        self.competition_time_month_scaler = pickle.load( open( self.home_path + 'parametros/competition_time_month_scaler.pkl', 'rb') )
+        self.promo_time_week_scaler        = pickle.load( open( self.home_path + 'parametros/promo_time_week_scaler.pkl', 'rb') )
+        self.year_scaler                   = pickle.load( open( self.home_path + 'parametros/year_scaler.pkl', 'rb') )
+        self.store_type_scaler             = pickle.load( open( self.home_path + 'parametros/store_type_scaler.pkl', 'rb') )
 
     def data_cleaning(self, df1):
         ## 1.1. Rename Columns
